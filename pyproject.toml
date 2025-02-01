@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "giv2xer"
+version = "0.0.1"
+description = "Convert Givelify CSV report to Xero import format"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{ name = "Stephen Florentino" }]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = ["peppercorn"]
+
+[project.optional-dependencies]
+dev = [
+    "black >= 25.1.0",
+    "isort >= 6.0.0",
+    "mypy >= 1.14.1"
+    ]
+
+[project.urls]
+"Homepage" = "https://github.com/seflorentino/giv2xer"
+
+[project.scripts]
+g2x = "g2x:main"
+
+[tool.setuptools]
+package-data = { "sample" = ["*.dat"] }
